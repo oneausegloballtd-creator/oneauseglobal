@@ -573,27 +573,27 @@
                 
                 <!-- Contact Form -->
                 <div class="contact-form-wrapper scroll-animate">
-                    <form class="contact-form" id="contactForm" novalidate>
+                    <form class="contact-form" id="contactForm" action="https://formspree.io/f/xbljanvo" method="POST" novalidate>
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="form-name">Name</label>
-                                <input type="text" id="form-name" placeholder="John Doe" required aria-required="true">
+                                <input type="text" id="form-name" name="name" placeholder="John Doe" required aria-required="true">
                                 <span class="error-msg" id="name-error">Please enter your name</span>
                             </div>
                             <div class="form-group">
                                 <label for="form-email">Email</label>
-                                <input type="email" id="form-email" placeholder="john@example.com" required aria-required="true">
+                                <input type="email" id="form-email" name="email" placeholder="john@example.com" required aria-required="true">
                                 <span class="error-msg" id="email-error">Please enter a valid email address</span>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="form-subject">Subject</label>
-                            <input type="text" id="form-subject" placeholder="Partnership Inquiry" required aria-required="true">
+                            <input type="text" id="form-subject" name="subject" placeholder="Partnership Inquiry" required aria-required="true">
                             <span class="error-msg" id="subject-error">Please enter a subject</span>
                         </div>
                         <div class="form-group">
                             <label for="form-message">Message</label>
-                            <textarea id="form-message" rows="5" placeholder="Tell us about your project or inquiry..." required aria-required="true"></textarea>
+                            <textarea id="form-message" name="message" rows="5" placeholder="Tell us about your project or inquiry..." required aria-required="true"></textarea>
                             <span class="error-msg" id="message-error">Please enter your message</span>
                         </div>
                         

@@ -319,13 +319,32 @@ document.addEventListener('DOMContentLoaded', () => {
             const origButtonText = submitBtn.innerHTML;
             submitBtn.innerHTML = `<span>Sending...</span> <svg class="send-icon spinner" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="3" stroke-dasharray="32" stroke-dashoffset="16"/></svg>`;
 
-            // Simulate server network latency
-            setTimeout(() => {
-                showToast('Thank you! Your inquiry has been sent. We will get back to you shortly.', 'success');
-                contactForm.reset();
+            // Submit form data to Formspree → delivered to info@oneauseglobal.com
+            const formData = new FormData(contactForm);
+
+            fetch(contactForm.action, {
+                method: 'POST',
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            })
+            .then(response => {
+                if (response.ok) {
+                    showToast('Thank you! Your message has been sent. We will get back to you shortly.', 'success');
+                    contactForm.reset();
+                } else {
+                    return response.json().then(data => {
+                        const errMsg = data.errors ? data.errors.map(e => e.message).join(', ') : 'Something went wrong. Please try again.';
+                        showToast(errMsg, 'error');
+                    });
+                }
+            })
+            .catch(() => {
+                showToast('Network error. Please check your connection and try again.', 'error');
+            })
+            .finally(() => {
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = origButtonText;
-            }, 1500);
+            });
         } else {
             showToast('Please correct the validation errors in the form.', 'error');
         }
