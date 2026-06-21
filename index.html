@@ -30,20 +30,7 @@
     <header class="main-header" id="mainHeader">
         <div class="header-container">
             <a href="#" class="logo" id="logoLink">
-                <span class="logo-icon">
-                    <svg viewBox="0 0 100 100" class="logo-svg">
-                        <polygon points="50,15 90,85 10,85" fill="none" stroke="url(#goldGradient)" stroke-width="8" stroke-linejoin="round"/>
-                        <circle cx="50" cy="53" r="15" fill="url(#goldGradient)"/>
-                        <defs>
-                            <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stop-color="#f59e0b" />
-                                <stop offset="50%" stop-color="#d4af37" />
-                                <stop offset="100%" stop-color="#f59e0b" />
-                            </linearGradient>
-                        </defs>
-                    </svg>
-                </span>
-                <span class="logo-text">ONEAUSE<span class="highlight">GLOBAL</span></span>
+                <img src="assets/logo.png" alt="Oneause Global Limited" style="height: 48px; width: auto;">
             </a>
             
             <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle Navigation" aria-expanded="false">
@@ -573,7 +560,8 @@
                 
                 <!-- Contact Form -->
                 <div class="contact-form-wrapper scroll-animate">
-                    <form class="contact-form" id="contactForm" action="https://formspree.io/f/xbljanvo" method="POST" novalidate>
+                    <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST" novalidate>
+                        <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="form-name">Name</label>
@@ -620,20 +608,7 @@
         <div class="footer-container">
             <div class="footer-brand">
                 <a href="#" class="logo">
-                    <span class="logo-icon">
-                        <svg viewBox="0 0 100 100" class="logo-svg">
-                            <polygon points="50,15 90,85 10,85" fill="none" stroke="url(#goldGradientFooter)" stroke-width="8" stroke-linejoin="round"/>
-                            <circle cx="50" cy="53" r="15" fill="url(#goldGradientFooter)"/>
-                            <defs>
-                                <linearGradient id="goldGradientFooter" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" stop-color="#f59e0b" />
-                                    <stop offset="50%" stop-color="#d4af37" />
-                                    <stop offset="100%" stop-color="#f59e0b" />
-                                </linearGradient>
-                            </defs>
-                        </svg>
-                    </span>
-                    <span class="logo-text">ONEAUSE<span class="highlight">GLOBAL</span></span>
+                    <img src="assets/logo.png" alt="Oneause Global Limited" style="height: 56px; width: auto;">
                 </a>
                 <p class="footer-desc">
                     Connecting local opportunities to global markets, driving growth, and creating lasting multi-sector value.
